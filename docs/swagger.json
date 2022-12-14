@@ -1,0 +1,134 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server for a hello world API.",
+        "title": "Hello World API",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Hello World Description",
+                "tags": [
+                    "User Service"
+                ],
+                "summary": "Hello World",
+                "responses": {
+                    "200": {
+                        "description": "Hoş Geldin Dünyaya",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Hata",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu Hatası",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Bilinmeyen Hata",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "User Post Description",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User Service"
+                ],
+                "summary": "User Post",
+                "parameters": [
+                    {
+                        "description": "Username",
+                        "name": "username",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Password",
+                        "name": "password",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Hoş Geldin",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Hata",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu Hatası",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/deneme": {
+            "get": {
+                "description": "Zamanı gösteren endpoint",
+                "tags": [
+                    "User Service"
+                ],
+                "summary": "Zamanı gösteren endpoint",
+                "responses": {
+                    "200": {
+                        "description": "2022-12-30 12:50:00",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Hata",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu Hatası",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Bilinmeyen Hata",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
