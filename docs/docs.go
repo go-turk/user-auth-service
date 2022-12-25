@@ -16,87 +16,19 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/": {
-            "get": {
-                "description": "Hello World Description",
-                "tags": [
-                    "User Service"
-                ],
-                "summary": "Hello World",
-                "responses": {
-                    "200": {
-                        "description": "Hoş Geldin Dünyaya",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Hata",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "500": {
-                        "description": "Sunucu Hatası",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "default": {
-                        "description": "Bilinmeyen Hata",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            },
+        "/refresh-token": {
             "post": {
-                "description": "User Post Description",
+                "description": "Refresh Token for User Auth Service",
                 "consumes": [
                     "application/json"
                 ],
                 "produces": [
                     "application/json"
                 ],
-                "tags": [
-                    "User Service"
-                ],
-                "summary": "User Post",
-                "parameters": [
-                    {
-                        "description": "Username",
-                        "name": "username",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "description": "Password",
-                        "name": "password",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
+                "summary": "Refresh Token",
                 "responses": {
                     "200": {
-                        "description": "Hoş Geldin",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Hata",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "500": {
-                        "description": "Sunucu Hatası",
+                        "description": "Refresh",
                         "schema": {
                             "type": "string"
                         }
@@ -104,34 +36,19 @@ const docTemplate = `{
                 }
             }
         },
-        "/deneme": {
-            "get": {
-                "description": "Zamanı gösteren endpoint",
-                "tags": [
-                    "User Service"
+        "/register": {
+            "post": {
+                "description": "Register to User Auth Service",
+                "consumes": [
+                    "application/json"
                 ],
-                "summary": "Zamanı gösteren endpoint",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Register",
                 "responses": {
                     "200": {
-                        "description": "2022-12-30 12:50:00",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "400": {
-                        "description": "Hata",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "500": {
-                        "description": "Sunucu Hatası",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "default": {
-                        "description": "Bilinmeyen Hata",
+                        "description": "Register",
                         "schema": {
                             "type": "string"
                         }
@@ -144,12 +61,12 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0.0",
+	Version:          "0.1.0",
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "Hello World API",
-	Description:      "This is a sample server for a hello world API.",
+	Title:            "User Auth Service API",
+	Description:      "This is a sample server for a user auth service.",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }
