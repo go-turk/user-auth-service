@@ -1,1 +1,4 @@
 .idea
+.dev.env
+deployment/postgres
+bin

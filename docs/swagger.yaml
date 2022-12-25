@@ -1,88 +1,33 @@
 info:
   contact: {}
-  description: This is a sample server for a hello world API.
-  title: Hello World API
-  version: 1.0.0
+  description: This is a sample server for a user auth service.
+  title: User Auth Service API
+  version: 0.1.0
 paths:
-  /:
-    get:
-      description: Hello World Description
-      responses:
-        "200":
-          description: Hoş Geldin Dünyaya
-          schema:
-            type: string
-        "400":
-          description: Hata
-          schema:
-            type: string
-        "500":
-          description: Sunucu Hatası
-          schema:
-            type: string
-        default:
-          description: Bilinmeyen Hata
-          schema:
-            type: string
-      summary: Hello World
-      tags:
-      - User Service
+  /refresh-token:
     post:
       consumes:
       - application/json
-      description: User Post Description
-      parameters:
-      - description: Username
-        in: body
-        name: username
-        required: true
-        schema:
-          type: string
-      - description: Password
-        in: body
-        name: password
-        required: true
-        schema:
-          type: string
+      description: Refresh Token for User Auth Service
       produces:
       - application/json
       responses:
         "200":
-          description: Hoş Geldin
+          description: Refresh
           schema:
             type: string
-        "400":
-          description: Hata
-          schema:
-            type: string
-        "500":
-          description: Sunucu Hatası
-          schema:
-            type: string
-      summary: User Post
-      tags:
-      - User Service
-  /deneme:
-    get:
-      description: Zamanı gösteren endpoint
+      summary: Refresh Token
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: Register to User Auth Service
+      produces:
+      - application/json
       responses:
         "200":
-          description: "2022-12-30 12:50:00"
+          description: Register
           schema:
             type: string
-        "400":
-          description: Hata
-          schema:
-            type: string
-        "500":
-          description: Sunucu Hatası
-          schema:
-            type: string
-        default:
-          description: Bilinmeyen Hata
-          schema:
-            type: string
-      summary: Zamanı gösteren endpoint
-      tags:
-      - User Service
+      summary: Register
 swagger: "2.0"
